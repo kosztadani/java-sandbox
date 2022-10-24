@@ -73,6 +73,7 @@
   <module name="FileLength"/>
   <module name="LineLength">
     <property name="fileExtensions" value="java"/>
+    <property name="max" value="120"/>
   </module>
 
   <!-- Checks for whitespace                               -->
@@ -102,7 +103,9 @@
     <module name="InvalidJavadocPosition"/>
     <module name="JavadocMethod"/>
     <module name="JavadocType"/>
-    <module name="JavadocVariable"/>
+    <module name="JavadocVariable">
+      <property name="excludeScope" value="private"/>
+    </module>
     <module name="JavadocStyle"/>
     <module name="MissingJavadocMethod"/>
 
@@ -162,7 +165,9 @@
     <!-- See https://checkstyle.org/config_coding.html -->
     <module name="EmptyStatement"/>
     <module name="EqualsHashCode"/>
-    <module name="HiddenField"/>
+    <module name="HiddenField">
+      <property name="ignoreConstructorParameter" value="true"/>
+    </module>
     <module name="IllegalInstantiation"/>
     <module name="InnerAssignment"/>
     <module name="MagicNumber"/>
@@ -193,6 +198,10 @@
       <property name="optional" value="true"/>
     </module>
 
+    <module name="SuppressWarningsHolder"/>
+
   </module>
+
+  <module name="SuppressWarningsFilter"/>
 
 </module>
