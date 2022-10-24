@@ -13,6 +13,28 @@ To run the "Hello World" application:
 ./gradlew :app:run
 ```
 
+### Counter example
+
+This is an example library containing thread-safe counters.
+
+#### Stress test
+
+To run the stress test:
+
+```bash
+./gradlew :counter-example:jcstressJar
+java -jar counter-example/build/libs/jcstress.jar -m sanity
+```
+
+#### Benchmarking
+
+To run the benchmarks:
+
+```bash
+./gradlew :counter-example:jmhJar
+java -jar counter-example/build/libs/jmh.jar
+```
+
 ### RMI example
 
 To run the server application:
