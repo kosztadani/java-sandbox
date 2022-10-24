@@ -13,6 +13,20 @@ To run the "Hello World" application:
 ./gradlew :app:run
 ```
 
+### RMI example
+
+To run the server application:
+```bash
+./gradlew :rmi-example:server:run
+```
+
+The server application must be running for the client to be able to connect.
+
+To run the client application:
+```bash
+./gradlew :rmi-example:client:run
+```
+
 ## Common maintenance operations, checklists
 
 I try to list some common development steps here, for reference.

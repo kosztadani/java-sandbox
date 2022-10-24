@@ -7,3 +7,8 @@
 
 # Ignore build directory of 'app' module
 /app/build
+
+# Ignore build directories of the 'rmi-example' module and submodules
+/rmi-example/client/build
+/rmi-example/common/build
+/rmi-example/server/build
