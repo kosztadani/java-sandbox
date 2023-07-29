@@ -17,11 +17,13 @@ java {
 }
 
 dependencies {
-    val junitVersion = "5.9.1"
-    testImplementation(group = "org.junit.jupiter", name = "junit-jupiter-api", version = junitVersion)
-    testRuntimeOnly(group = "org.junit.jupiter", name = "junit-jupiter-engine", version = junitVersion)
+    val junitJupiterVersion = "5.10.0"
+    val junitPlatformVersion = "1.10.0"
+    testImplementation(group = "org.junit.jupiter", name = "junit-jupiter-api", version = junitJupiterVersion)
+    testRuntimeOnly(group = "org.junit.jupiter", name = "junit-jupiter-engine", version = junitJupiterVersion)
+    testRuntimeOnly(group = "org.junit.platform", name = "junit-platform-launcher", version = junitPlatformVersion)
 
-    val mockitoVersion = "4.8.0"
+    val mockitoVersion = "5.4.0"
     testImplementation(group = "org.mockito", name = "mockito-core", version = mockitoVersion)
 }
 
