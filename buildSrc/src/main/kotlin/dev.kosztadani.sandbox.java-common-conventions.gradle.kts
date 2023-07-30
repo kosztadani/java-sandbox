@@ -19,6 +19,13 @@ java {
     withSourcesJar()
 }
 
+checkstyle {
+    sourceSets = listOf(
+        project.sourceSets.main.get(),
+        project.sourceSets.test.get()
+    )
+}
+
 dependencies {
     val junitJupiterVersion = "5.10.0"
     val junitPlatformVersion = "1.10.0"
