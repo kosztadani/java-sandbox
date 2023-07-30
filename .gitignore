@@ -12,3 +12,6 @@
 /rmi-example/client/build
 /rmi-example/common/build
 /rmi-example/server/build
+
+# Ignore build directory of the 'counter-example' module
+/counter-example/build

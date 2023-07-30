@@ -13,6 +13,33 @@ To run the "Hello World" application:
 ./gradlew :app:run
 ```
 
+### Counter example
+
+This is an example library containing thread-safe counters.
+
+#### Stress test
+
+To run the stress test:
+
+```bash
+./gradlew :counter-example:installJcstressDist
+java -jar \
+  counter-example/build/install/counter-example-jcstress/counter-example-jcstress.jar \
+ -m sanity
+```
+
+Note the `-m sanity` option, which decreases the run time.
+
+#### Benchmarking
+
+To run the benchmarks:
+
+```bash
+./gradlew :counter-example:installJmhDist
+java -jar \
+  counter-example/build/install/counter-example-jmh/counter-example-jmh.jar
+```
+
 ### RMI example
 
 To run the server application:
