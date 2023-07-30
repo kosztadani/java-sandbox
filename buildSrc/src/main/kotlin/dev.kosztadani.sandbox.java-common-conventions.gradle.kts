@@ -2,7 +2,10 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent.*
 
 plugins {
     java
+    distribution
     checkstyle
+    id("dev.kosztadani.sandbox.jcstress")
+    id("dev.kosztadani.sandbox.jmh")
 }
 
 repositories {
