@@ -22,10 +22,23 @@ val jmhRuntimeClasspath: Configuration by configurations.named(jmhSourceSet.get(
 }
 
 dependencies {
-    val jmhVersion = "1.34"
     jmhImplementation(project)
-    jmhImplementation(group = "org.openjdk.jmh", name = "jmh-core", version = jmhVersion)
-    jmhAnnotationProcessor(group = "org.openjdk.jmh", name = "jmh-generator-annprocess", version = jmhVersion)
+    versionCatalogs.named("libs").findLibrary("jmh-core").ifPresentOrElse(
+        {
+            jmhImplementation(it)
+        },
+        {
+            throw AssertionError("Library 'jmh' not found in libs.versions.toml")
+        }
+    )
+    versionCatalogs.named("libs").findLibrary("jmh-annotation-processor").ifPresentOrElse(
+        {
+            jmhAnnotationProcessor(it)
+        },
+        {
+            throw AssertionError("Library 'jmh-annotation-processor' not found in libs.versions.toml")
+        }
+    )
 }
 
 val jmhJarTask = tasks.register<Jar>("jmhJar") {

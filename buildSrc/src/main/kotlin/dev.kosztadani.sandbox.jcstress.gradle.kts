@@ -22,10 +22,16 @@ val jcstressRuntimeClasspath: Configuration by configurations.named(jcstressSour
 }
 
 dependencies {
-    val jcstressVersion = "0.16"
     jcstressImplementation(project);
-    jcstressImplementation(group = "org.openjdk.jcstress", name = "jcstress-core", version = jcstressVersion)
-    jcstressAnnotationProcessor(group = "org.openjdk.jcstress", name = "jcstress-core", version = jcstressVersion)
+    versionCatalogs.named("libs").findLibrary("jcstress").ifPresentOrElse(
+        {
+            jcstressImplementation(it)
+            jcstressAnnotationProcessor(it)
+        },
+        {
+            throw AssertionError("Library 'jcstress' not found in libs.versions.toml")
+        }
+    )
 }
 
 val jcstressJarTask = tasks.register<Jar>("jcstressJar") {

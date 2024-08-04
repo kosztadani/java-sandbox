@@ -28,14 +28,14 @@ checkstyle {
 }
 
 dependencies {
-    val junitJupiterVersion = "5.10.0"
-    val junitPlatformVersion = "1.10.0"
-    testImplementation(group = "org.junit.jupiter", name = "junit-jupiter-api", version = junitJupiterVersion)
-    testRuntimeOnly(group = "org.junit.jupiter", name = "junit-jupiter-engine", version = junitJupiterVersion)
-    testRuntimeOnly(group = "org.junit.platform", name = "junit-platform-launcher", version = junitPlatformVersion)
-
-    val mockitoVersion = "5.4.0"
-    testImplementation(group = "org.mockito", name = "mockito-core", version = mockitoVersion)
+    versionCatalogs.named("libs").findBundle("testLibraries").ifPresentOrElse(
+        {
+            testImplementation(it)
+        },
+        {
+            throw AssertionError("Bundle 'testLibraries' not found in libs.versions.toml")
+        }
+    )
 }
 
 tasks.named<Test>("test") {
