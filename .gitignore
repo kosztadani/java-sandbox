@@ -15,3 +15,8 @@
 
 # Ignore build directory of the 'counter-example' module
 /counter-example/build
+
+# Ignore build directory of the 'tcp-example' module and submodules
+/tcp-example/client/build
+/tcp-example/common/build
+/tcp-example/server/build

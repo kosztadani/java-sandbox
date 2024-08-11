@@ -7,3 +7,7 @@ include("rmi-example:server")
 include("rmi-example:client")
 
 include("counter-example")
+
+include("tcp-example:common")
+include("tcp-example:server")
+include("tcp-example:client")

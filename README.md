@@ -54,6 +54,25 @@ To run the client application:
 ./gradlew :rmi-example:client:run
 ```
 
+### TCP example
+
+To run the server application:
+```bash
+./gradlew :tcp-example:server:installDist
+tcp-example/server/build/install/server/bin/server 9999
+```
+
+The server application must be running for the client to be able to connect.
+
+To run the client application:
+```bash
+./gradlew :tcp-example:client:installDist
+tcp-example/client/build/install/client/bin/client localhost 9999
+```
+
+Note that gracious error handling is not implemented; the user is confronted with stack traces instead.
+You can crash the server by dividing by zero.
+
 ## Common maintenance operations, checklists
 
 I try to list some common development steps here, for reference.
