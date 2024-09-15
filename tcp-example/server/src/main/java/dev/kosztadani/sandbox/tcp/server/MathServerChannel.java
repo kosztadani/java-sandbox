@@ -5,6 +5,7 @@ import dev.kosztadani.sandbox.tcp.common.protocol.MathRequest;
 import dev.kosztadani.sandbox.tcp.common.protocol.MathResponse;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
