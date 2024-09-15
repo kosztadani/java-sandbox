@@ -29,8 +29,11 @@ public final class MathServerMain {
     private void run() throws IOException {
         Optional<InetSocketAddress> serverAddress = getAddress();
         if (serverAddress.isPresent()) {
-            try (MathServer server = MathServer.create(serverAddress.get())) {
-                server.run();
+            try (MathServerConnector serverConnector = MathServerConnector.create()) {
+                MathServer server = serverConnector.listenOn(serverAddress.get());
+                int port = server.getAddress().getPort();
+                System.out.println("Listening on port: " + port);
+                serverConnector.run();
             }
         } else {
             printHelpAndExit();
