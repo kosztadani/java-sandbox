@@ -3,6 +3,7 @@ package dev.kosztadani.sandbox.tcp.server;
 import dev.kosztadani.sandbox.tcp.common.io.SelectionKeyAttachment;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
@@ -12,7 +13,7 @@ import java.nio.channels.SocketChannel;
  * Accepts incoming client connections and allocates a {@link MathServerChannel} for them.
  */
 final class MathServerSocket
-    implements SelectionKeyAttachment {
+    implements SelectionKeyAttachment, MathServer {
 
     private final SelectionKey key;
 
@@ -24,6 +25,11 @@ final class MathServerSocket
         this.key = key;
         selector = key.selector();
         channel = (ServerSocketChannel) key.channel();
+    }
+
+    @Override
+    public InetSocketAddress getAddress() throws IOException {
+        return (InetSocketAddress) channel.getLocalAddress();
     }
 
     @Override
