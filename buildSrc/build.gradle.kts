@@ -5,3 +5,9 @@ plugins {
 repositories {
     gradlePluginPortal()
 }
+
+buildscript {
+    configurations.classpath {
+        resolutionStrategy.activateDependencyLocking()
+    }
+}
