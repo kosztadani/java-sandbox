@@ -20,3 +20,4 @@
 /tcp-example/client/build
 /tcp-example/common/build
 /tcp-example/server/build
+/tcp-example/integration/build
