@@ -28,7 +28,7 @@ public final class MathClientConnector
      * Creates, but doesn't start a new connector. See {@link #run()}.
      *
      * @return a new connector.
-     * @throws IOException if an I/O error occurs while creating the client.
+     * @throws IOException if an I/O error occurs while creating the connector.
      */
     public static MathClientConnector create() throws IOException {
         Selector selector = Selector.open();
@@ -38,7 +38,7 @@ public final class MathClientConnector
 
 
     /**
-     * Runs the server in the current thread.
+     * Runs the connector in the current thread.
      *
      * <p>
      * This blocks the thread. Usually, this should be executed in a separate thread.
