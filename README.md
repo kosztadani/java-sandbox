@@ -111,3 +111,11 @@ To build Javadoc and verify that there are no warnings and errors:
 - List the module in `settings.gradle.kts`.
 - Add entry to `.gitignore` to ignore build files.
 - Document the module in this README.
+
+### Upgrade dependency locks
+
+To upgrade locked dependencies:
+
+```bash
+./gradlew resolveAndLockAll --write-locks
+```

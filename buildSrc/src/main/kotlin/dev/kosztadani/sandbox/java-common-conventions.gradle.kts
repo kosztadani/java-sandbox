@@ -29,6 +29,11 @@ checkstyle {
     )
 }
 
+dependencyLocking {
+    lockAllConfigurations()
+    lockMode = LockMode.STRICT
+}
+
 dependencies {
     versionCatalogs.named("libs").findBundle("testLibraries").ifPresentOrElse(
         {
