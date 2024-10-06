@@ -73,6 +73,16 @@ tcp-example/client/build/install/client/bin/client localhost 9999
 Note that gracious error handling is not implemented; the user is confronted with stack traces instead.
 You can crash the server by dividing by zero.
 
+#### Benchmarking
+
+To run the benchmarks:
+
+```bash
+./gradlew :tcp-example:integration:installJmhDist
+java -jar \
+  tcp-example/integration/build/install/integration-jmh/integration-jmh.jar
+```
+
 ## Common maintenance operations, checklists
 
 I try to list some common development steps here, for reference.
