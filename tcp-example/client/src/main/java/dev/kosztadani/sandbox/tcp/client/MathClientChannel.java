@@ -22,7 +22,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 final class MathClientChannel
     implements SelectionKeyAttachment, MathClient {
 
-    private static final int BUFFER_SIZE = 1024;
+    private static final int BUFFER_SIZE = 1024 * 1024;
 
     private final SelectionKey key;
 
