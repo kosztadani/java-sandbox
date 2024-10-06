@@ -1,5 +1,5 @@
 plugins {
-    id("dev.kosztadani.sandbox.java-application-conventions")
+    id("dev.kosztadani.sandbox.application")
 }
 
 val applicationMainClass = "dev.kosztadani.sandbox.rmi.client.ClientMain"

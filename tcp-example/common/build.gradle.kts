@@ -1,3 +1,3 @@
 plugins {
-    id("dev.kosztadani.sandbox.java-library-conventions")
+    id("dev.kosztadani.sandbox.library")
 }
