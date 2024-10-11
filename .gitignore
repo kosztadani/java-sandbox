@@ -21,3 +21,6 @@
 /tcp-example/common/build
 /tcp-example/server/build
 /tcp-example/integration/build
+
+# Ignore build directory of the 'circuit-simulator' module
+/circuit-simulator/build

@@ -12,3 +12,5 @@ include("tcp-example:common")
 include("tcp-example:server")
 include("tcp-example:client")
 include("tcp-example:integration")
+
+include("circuit-simulator")
