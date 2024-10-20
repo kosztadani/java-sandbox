@@ -1,6 +1,5 @@
-package dev.kosztadani.sandbox.circuitsimulator;
+package dev.kosztadani.sandbox.circuitsimulator.electronics;
 
-import dev.kosztadani.sandbox.circuitsimulator.electronics.Circuit;
 import dev.kosztadani.sandbox.circuitsimulator.electronics.components.Contact;
 import dev.kosztadani.sandbox.circuitsimulator.electronics.components.Diode;
 import dev.kosztadani.sandbox.circuitsimulator.electronics.components.PowerSupply;

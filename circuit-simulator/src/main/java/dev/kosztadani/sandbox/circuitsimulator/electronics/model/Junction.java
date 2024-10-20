@@ -22,7 +22,7 @@ public final class Junction
         } else if (negative.isEmpty()) {
             return JunctionState.POSITIVE;
         } else {
-            throw new IllegalStateException("Junction is shorted: " + this);
+            throw new ShortedJunctionException(toString());
         }
     }
 

@@ -6,7 +6,7 @@ import dev.kosztadani.sandbox.circuitsimulator.electronics.model.Junction;
 public abstract class AbstractComponentPort
     implements ComponentPort {
 
-    private Junction junction;
+    private Junction junction = new Junction();
 
     public void connect(Junction junction) {
         this.junction = junction;
