@@ -67,6 +67,14 @@ public final class LatchingRelay
         return newState != oldState;
     }
 
+    @Override
+    public void reset() {
+        activatorPort1.reset();
+        activatorPort2.reset();
+        deActivatorPort1.reset();
+        deActivatorPort2.reset();
+    }
+
     private boolean activatorActive() {
         return activatorPort1.junction().state().isOpposite(activatorPort2.output());
     }

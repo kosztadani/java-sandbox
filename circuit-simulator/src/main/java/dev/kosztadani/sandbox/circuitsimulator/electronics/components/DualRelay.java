@@ -41,6 +41,12 @@ public final class DualRelay
         return newState != oldState;
     }
 
+    @Override
+    public void reset() {
+        port.reset();
+    }
+
+
     private State newState() {
         if (port.junction().state().isConnected()) {
             return State.ACTIVE;

@@ -46,6 +46,12 @@ public final class Relay
         return newState != oldState;
     }
 
+    @Override
+    public void reset() {
+        port1.reset();
+        port2.reset();
+    }
+
     private State newState() {
         if (port1.junction().state().isOpposite(port2.junction().state())) {
             return State.ACTIVE;

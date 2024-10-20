@@ -42,6 +42,12 @@ public final class Connection
         return port1.update() | port2.update();
     }
 
+    @Override
+    public void reset() {
+        port1.reset();
+        port2.reset();
+    }
+
     private static class Port
         extends AbstractComponentPort {
 

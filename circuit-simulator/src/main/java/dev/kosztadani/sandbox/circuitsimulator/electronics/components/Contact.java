@@ -57,6 +57,12 @@ public final class Contact
         return port1.update() | port2.update();
     }
 
+    @Override
+    public void reset() {
+        port1.reset();
+        port2.reset();
+    }
+
     private class Port
         extends AbstractComponentPort {
 

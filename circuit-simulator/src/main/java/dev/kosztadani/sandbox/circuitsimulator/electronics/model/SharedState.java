@@ -5,7 +5,10 @@ import java.util.Objects;
 /**
  * Mutable wrapper around a {@link State}.
  */
-public final class SharedState {
+public final class SharedState
+    implements Resettable {
+
+    private final State initialValue;
 
     private State value;
 
@@ -14,6 +17,7 @@ public final class SharedState {
     }
 
     public SharedState(final State initialValue) {
+        this.initialValue = initialValue;
         value = initialValue;
     }
 
@@ -26,6 +30,11 @@ public final class SharedState {
     }
 
     @Override
+    public void reset() {
+        value = initialValue;
+    }
+
+    @Override
     public boolean equals(final Object o) {
         if (this == o) {
             return true;
@@ -34,18 +43,19 @@ public final class SharedState {
             return false;
         }
         SharedState that = (SharedState) o;
-        return value == that.value;
+        return initialValue == that.initialValue && value == that.value;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(value);
+        return Objects.hash(initialValue, value);
     }
 
     @Override
     public String toString() {
         return "SharedState{" +
-            "value=" + value +
+            "initialValue=" + initialValue +
+            ", value=" + value +
             '}';
     }
 }

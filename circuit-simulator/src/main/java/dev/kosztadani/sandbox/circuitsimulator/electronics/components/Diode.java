@@ -38,6 +38,12 @@ public final class Diode
         return cathode.update();
     }
 
+    @Override
+    public void reset() {
+        anode.reset();
+        cathode.reset();
+    }
+
     private static class Anode
         extends AbstractComponentPort {
 

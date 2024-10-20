@@ -34,6 +34,12 @@ public final class PowerSupply
         return positive.update() | negative.update();
     }
 
+    @Override
+    public void reset() {
+        positive.reset();
+        negative.reset();
+    }
+
     private static class Port extends AbstractComponentPort {
 
         private final JunctionState voltage;

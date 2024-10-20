@@ -7,7 +7,8 @@ import java.util.Set;
 /**
  * A point in a circuit, to which {@link ComponentPort}s can be connected.
  */
-public final class Junction {
+public final class Junction
+    implements Resettable {
 
     private final Set<ComponentPort> positive = SetFactory.newIdentitySet();
 
@@ -43,6 +44,12 @@ public final class Junction {
 
     public boolean highImpedance(final ComponentPort port) {
         return positive.remove(port) | negative.remove(port);
+    }
+
+    @Override
+    public void reset() {
+        positive.clear();
+        negative.clear();
     }
 
     @Override
