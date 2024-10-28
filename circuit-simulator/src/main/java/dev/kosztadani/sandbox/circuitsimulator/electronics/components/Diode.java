@@ -1,6 +1,7 @@
 package dev.kosztadani.sandbox.circuitsimulator.electronics.components;
 
 import dev.kosztadani.sandbox.circuitsimulator.electronics.common.AbstractComponentPort;
+import dev.kosztadani.sandbox.circuitsimulator.electronics.common.HighImpedancePort;
 import dev.kosztadani.sandbox.circuitsimulator.electronics.model.Component;
 import dev.kosztadani.sandbox.circuitsimulator.electronics.model.Junction;
 import dev.kosztadani.sandbox.circuitsimulator.electronics.model.JunctionState;
@@ -11,7 +12,7 @@ import dev.kosztadani.sandbox.circuitsimulator.electronics.model.JunctionState;
 public final class Diode
     implements Component {
 
-    private Anode anode;
+    private HighImpedancePort anode;
 
     private Cathode cathode;
 
@@ -20,7 +21,7 @@ public final class Diode
 
     public static Diode create() {
         Diode diode = new Diode();
-        diode.anode = new Anode();
+        diode.anode = new HighImpedancePort();
         diode.cathode = diode.new Cathode();
         return diode;
     }
@@ -42,15 +43,6 @@ public final class Diode
     public void reset() {
         anode.reset();
         cathode.reset();
-    }
-
-    private static class Anode
-        extends AbstractComponentPort {
-
-        @Override
-        public JunctionState output() {
-            return JunctionState.HIGH_IMPEDANCE;
-        }
     }
 
     private class Cathode
