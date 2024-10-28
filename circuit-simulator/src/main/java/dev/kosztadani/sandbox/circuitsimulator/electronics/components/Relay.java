@@ -39,7 +39,7 @@ public final class Relay
     }
 
     @Override
-    public boolean update() {
+    public boolean shareState() {
         State oldState = state.get();
         State newState = newState();
         state.set(newState);

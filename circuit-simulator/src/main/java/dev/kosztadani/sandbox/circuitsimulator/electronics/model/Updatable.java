@@ -7,6 +7,8 @@ public interface Updatable {
      *
      * @return whether the state has changed.
      */
-    boolean update();
+    default boolean update() {
+        return false;
+    }
 
 }

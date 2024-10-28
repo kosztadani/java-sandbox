@@ -34,18 +34,17 @@ public final class DualRelay
     }
 
     @Override
-    public boolean update() {
+    public void reset() {
+        port.reset();
+    }
+
+    @Override
+    public boolean shareState() {
         State oldState = state.get();
         State newState = newState();
         state.set(newState);
         return newState != oldState;
     }
-
-    @Override
-    public void reset() {
-        port.reset();
-    }
-
 
     private State newState() {
         if (port.junction().state().isConnected()) {

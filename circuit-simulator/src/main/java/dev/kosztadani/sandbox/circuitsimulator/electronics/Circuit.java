@@ -30,18 +30,40 @@ public final class Circuit
         boolean result = false;
         boolean updatedNow;
         do {
-            updatedNow = updateOnce();
+            updatedNow = updateComponentsOnce();
             result |= updatedNow;
         } while (updatedNow);
         return result;
     }
 
-    private boolean updateOnce() {
+    private boolean updateComponentsOnce() {
         boolean updated = false;
         for (Component component : components) {
             updated |= component.update();
         }
         return updated;
+    }
+
+
+    @Override
+    public boolean shareState() {
+        boolean stateChanged = false;
+        for (Component component : components) {
+            stateChanged |= component.shareState();
+        }
+        return stateChanged;
+    }
+
+    public boolean simulate() {
+        boolean result = false;
+        boolean stateChangedNow;
+        do {
+            reset();
+            update();
+            stateChangedNow = shareState();
+            result |= stateChangedNow;
+        } while (stateChangedNow);
+        return result;
     }
 
     @Override

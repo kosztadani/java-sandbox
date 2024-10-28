@@ -53,7 +53,7 @@ public final class LatchingRelay
     }
 
     @Override
-    public boolean update() {
+    public boolean shareState() {
         State oldState = state.get();
         State newState;
         if (activatorActive() && !deActivatorActive()) {
