@@ -13,6 +13,12 @@ public class ServerMain {
     private static final int REGISTRY_PORT = 1099;
 
     /**
+     * Creates an instance of the main server class.
+     */
+    public ServerMain() {
+    }
+
+    /**
      * The main method of the RMI server application.
      *
      * <p>

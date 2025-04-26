@@ -11,6 +11,12 @@ import java.rmi.registry.Registry;
 public final class ClientMain {
 
     /**
+     * Creates an instance of the main client class.
+     */
+    public ClientMain() {
+    }
+
+    /**
      * The main method of the RMI client application.
      *
      * <p>

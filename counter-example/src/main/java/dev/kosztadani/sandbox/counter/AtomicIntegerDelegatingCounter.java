@@ -10,6 +10,12 @@ public final class AtomicIntegerDelegatingCounter
 
     private final AtomicInteger delegate = new AtomicInteger();
 
+    /**
+     * Creates a new counter initialized with 0.
+     */
+    public AtomicIntegerDelegatingCounter() {
+    }
+
     @Override
     public int get() {
         return delegate.get();

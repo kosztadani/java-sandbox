@@ -22,6 +22,12 @@ public final class ThreadLocalCounter
 
     private final Object lock = new Object();
 
+    /**
+     * Creates a new counter initialized with 0.
+     */
+    public ThreadLocalCounter() {
+    }
+
     @Override
     public int get() {
         int result = 0;

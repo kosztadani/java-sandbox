@@ -6,6 +6,12 @@ package dev.kosztadani.sandbox.app;
 public final class App {
 
     /**
+     * Creates an instance of the app's main class.
+     */
+    public App() {
+    }
+
+    /**
      * The main method of the application.
      *
      * @param args The command-line arguments passed to the application.

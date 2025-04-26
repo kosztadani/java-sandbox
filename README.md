@@ -9,6 +9,7 @@ It can also serve as a baseline for other projects.
 ### Hello World application example
 
 To run the "Hello World" application:
+
 ```bash
 ./gradlew :app:run
 ```
@@ -43,6 +44,7 @@ java -jar \
 ### RMI example
 
 To run the server application:
+
 ```bash
 ./gradlew :rmi-example:server:run
 ```
@@ -50,6 +52,7 @@ To run the server application:
 The server application must be running for the client to be able to connect.
 
 To run the client application:
+
 ```bash
 ./gradlew :rmi-example:client:run
 ```
@@ -57,6 +60,7 @@ To run the client application:
 ### TCP example
 
 To run the server application:
+
 ```bash
 ./gradlew :tcp-example:server:installDist
 tcp-example/server/build/install/server/bin/server 9999
@@ -65,6 +69,7 @@ tcp-example/server/build/install/server/bin/server 9999
 The server application must be running for the client to be able to connect.
 
 To run the client application:
+
 ```bash
 ./gradlew :tcp-example:client:installDist
 tcp-example/client/build/install/client/bin/client localhost 9999
@@ -90,16 +95,19 @@ I try to list some common development steps here, for reference.
 ### Check repository
 
 To build modules and run unit tests:
+
 ```bash
 ./gradlew test
 ```
 
 To verify that there are no Checkstyle warnings:
+
 ```bash
 ./gradlew check
 ```
 
 To build Javadoc and verify that there are no warnings and errors:
+
 ```bash
 ./gradlew javadoc
 ```

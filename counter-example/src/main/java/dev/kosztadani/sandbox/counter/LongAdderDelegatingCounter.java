@@ -10,6 +10,12 @@ public final class LongAdderDelegatingCounter
 
     private final LongAdder delegate = new LongAdder();
 
+    /**
+     * Creates a new counter initialized with 0.
+     */
+    public LongAdderDelegatingCounter() {
+    }
+
     @Override
     public int get() {
         return delegate.intValue();

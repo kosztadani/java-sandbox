@@ -24,8 +24,15 @@ public final class VarHandleCounter
         }
     }
 
+
     @SuppressWarnings("unused") // accessed via COUNTER_HANDLE
     private int counter;
+
+    /**
+     * Creates a new counter initialized with 0.
+     */
+    public VarHandleCounter() {
+    }
 
     @Override
     public int get() {
