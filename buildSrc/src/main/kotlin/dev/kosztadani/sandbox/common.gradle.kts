@@ -25,8 +25,24 @@ java {
 checkstyle {
     sourceSets = listOf(
         project.sourceSets.main.get(),
-        project.sourceSets.test.get()
+        project.sourceSets.test.get(),
     )
+}
+
+tasks.named<Checkstyle>("checkstyleMain") {
+    configFile = project.rootProject.layout.projectDirectory
+        .dir("config")
+        .dir("checkstyle")
+        .file("checkstyle-main.xml")
+        .asFile
+}
+
+tasks.named<Checkstyle>("checkstyleTest") {
+    configFile = project.rootProject.layout.projectDirectory
+        .dir("config")
+        .dir("checkstyle")
+        .file("checkstyle-test.xml")
+        .asFile
 }
 
 dependencyLocking {
