@@ -3,8 +3,8 @@ package dev.kosztadani.sandbox
 import java.util.stream.Collectors
 
 plugins {
-    java apply false
-    distribution apply false
+    java
+    distribution
 }
 
 val jcstressSourceSetName = "jcstress"
